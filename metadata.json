@@ -1,0 +1,5 @@
+{
+  "name": "phan mem bs nghi khong tien thuoc",
+  "description": "An application for managing patient records, prescriptions, and providing AI-powered diagnostic suggestions. All data is stored locally in your browser.",
+  "requestFramePermissions": []
+}

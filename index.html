@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý phòng khám 1.0 - Phần mềm quản lý phòng khám</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- SheetJS for Excel handling -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;
+    </script>
+    <style>
+      :root {
+        --primary-hue: 217;
+        --primary-saturation: 91%;
+        --primary-lightness: 60%;
+        
+        --primary: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+        --primary-dark: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) - 8%));
+        --primary-light: hsl(var(--primary-hue), var(--primary-saturation), 95%);
+        --primary-foreground: #FFFFFF;
+
+        --background: hsl(220, 20%, 98%);
+        --card: hsl(0, 0%, 100%);
+        --text-primary: hsl(222, 22%, 20%);
+        --text-secondary: hsl(215, 14%, 47%);
+        --border: hsl(215, 20%, 90%);
+        --ring: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+        
+        --chart-1: hsl(var(--primary-hue), var(--primary-saturation), 60%);
+        --chart-2: hsl(var(--primary-hue), var(--primary-saturation), 70%);
+        --chart-3: hsl(var(--primary-hue), var(--primary-saturation), 80%);
+      }
+
+      html.dark {
+        --primary-hue: 217;
+        --primary-saturation: 85%;
+        --primary-lightness: 65%;
+
+        --background: hsl(222, 22%, 12%);
+        --card: hsl(222, 22%, 16%);
+        --text-primary: hsl(215, 20%, 90%);
+        --text-secondary: hsl(215, 14%, 60%);
+        --border: hsl(222, 22%, 25%);
+        --ring: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+
+        --chart-1: hsl(var(--primary-hue), var(--primary-saturation), 65%);
+        --chart-2: hsl(var(--primary-hue), var(--primary-saturation), 55%);
+        --chart-3: hsl(var(--primary-hue), var(--primary-saturation), 45%);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary);
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.417.0",
+    "react-hot-toast": "https://aistudiocdn.com/react-hot-toast@^2.4.2",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.19",
+    "recharts": "https://aistudiocdn.com/recharts@^2.12.7"
+  }
+}
+</script>
+</head>
+<body class="">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
